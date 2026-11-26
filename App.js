@@ -526,7 +526,14 @@ function Home({
           style={{ position: 'absolute', right: 62, bottom: 104 }}
         />
                 
-        <View style={{ flex: 1, justifyContent: 'flex-end', padding: 18 }}>
+        <<View
+  style={{
+    position: 'absolute',
+    left: 18,
+    right: 18,
+    bottom: 18
+  }}
+>
                     <Text style={s.heroA}>90 DAYS</Text>
                     <Text style={s.heroB}>CHALLENGE</Text>
                     
