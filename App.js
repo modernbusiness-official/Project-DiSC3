@@ -3,18 +3,8 @@
 //  Single-file Expo app (Web + iPhone + Android)
 //  Paste this whole file into App.js on https://snack.expo.dev
 // ============================================================
+
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  Switch,
-  TextInput,
-  Modal,
-  StyleSheet,
-  Platform,
-} from 'react-native';
 import {
   View,
   Text,
