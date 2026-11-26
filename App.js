@@ -526,7 +526,7 @@ function Home({
           style={{ position: 'absolute', right: 62, bottom: 104 }}
         />
                 
-        <<View
+        <View
   style={{
     position: 'absolute',
     left: 18,
