@@ -1,11 +1,82 @@
-# Sample Snack app
+Project DiSC3
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+90-Day Self-Discovery Challenge
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+Become who you promised yourself to be.
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+Project DiSC3 is a personal 90-day self-improvement challenge designed to build discipline, consistency, confidence, self-awareness, and courage through daily actions.
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+The Five Pillars — DISC5
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+Pillar	Focus
+D — Discipline	Build daily discipline and take responsibility
+C — Consistency	Make progress through regular actions
+C — Confidence	Develop confidence through practice
+S — Self-awareness	Understand yourself and reflect
+C — Courage	Take action outside your comfort zone
+
+Challenge Overview
+
+* Duration: 90 Days
+* Start Date: 27 November 2026
+* End Date: 24 February 2027
+* Daily Habits: 11
+* Water Goal: 3 Litres (customizable)
+
+App Features
+
+* Daily habit tracking
+* Five-pillar progress tracking
+* Daily water tracker
+* Weight tracking
+* Daily schedule management
+* Weekly, monthly, and overall progress
+* Current streak tracking
+* Local data persistence
+* Supabase cloud backup and synchronization (configuration required)
+
+Technology Stack
+
+* React Native
+* Expo
+* JavaScript
+* AsyncStorage
+* Supabase
+* GitHub Pages
+
+Getting Started
+
+1. Open the Project DiSC3 application.
+2. Start your 90-day challenge.
+3. Complete your daily habits.
+4. Track water intake and body weight.
+5. Review your progress regularly.
+6. Reflect and keep improving.
+
+Project Structure
+
+Project-DiSC3/
+├── App.js
+├── app.json
+├── index.js
+├── package.json
+├── assets/
+├── components/
+├── .github/
+└── README.md
+
+Data & Privacy
+
+Progress is stored locally on the device. Cloud backup requires a correctly configured Supabase project, anonymous authentication, and appropriate database security policies.
+
+Never publish Supabase secret or service-role keys.
+
+Project Goal
+
+Become more disciplined, consistent, confident, self-aware, and courageous — one day at a time.
+
+90 Days. Five Pillars. One Better You.
+
+⸻
+
+Project DiSC3 — Personal Self-Discovery Project.
