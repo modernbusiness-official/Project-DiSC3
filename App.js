@@ -15,6 +15,18 @@ import {
   StyleSheet,
   Platform,
 } from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  Switch,
+  TextInput,
+  Modal,
+  StyleSheet,
+  Platform,
+  useWindowDimensions,
+} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -495,6 +507,8 @@ function Home({
   const water = data.water[today] || 0;
   const weight = data.weight[today];
   const dayPct = todayDone / TOTAL_HABITS;
+  const { width } = useWindowDimensions();
+const isMobile = width < 600;
 
   return (
     <ScrollView
@@ -555,48 +569,40 @@ function Home({
         </Text>
               
       </View>
-            {/* Day ring + stats */}
             
-      <View style={s.ringRow}>
-                
-        <Ring size={150} stroke={13} pct={today / TOTAL_DAYS} id="homeRing">
-                    <Text style={s.ringDay}>DAY</Text>
-                    
-          <Text style={s.ringNum}>
-                        {pad2(today)}
-                        <Text style={s.ringOf}> / 90</Text>
-                      
-          </Text>
-                  
-        </Ring>
-                
-        <View style={{ flex: 1, marginLeft: 18 }}>
-                    
-          <StatRow
-            icon="target"
-            lib="mci"
-            value={`${Math.round(stats.pct * 100)}%`}
-            label="Overall Progress"
-          />
-                    
-          <StatRow
-            icon="fire"
-            lib="mci"
-            color={C.orange}
-            value={`${streak} Days`}
-            label="Current Streak"
-          />
-                    
-          <StatRow
-            icon="flag"
-            lib="mci"
-            value={`${TOTAL_DAYS - today} Days`}
-            label="Remaining"
-          />
-                  
-        </View>
-              
-      </View>
+{/* Day ring + stats */}
+<View style={[s.ringRow, isMobile && s.ringRowMobile]}>
+  <Ring size={150} stroke={13} pct={today / TOTAL_DAYS} id="homeRing">
+    <Text style={s.ringDay}>DAY</Text>
+    <Text style={s.ringNum}>
+      {pad2(today)}
+      <Text style={s.ringOf}> / 90</Text>
+    </Text>
+  </Ring>
+
+  <View style={[{ flex: 1, marginLeft: 18 }, isMobile && s.mobileStats]}>
+    <StatRow
+      icon="target"
+      lib="mci"
+      value={`${Math.round(stats.pct * 100)}%`}
+      label="Overall Progress"
+    />
+    <StatRow
+      icon="fire"
+      lib="mci"
+      color={C.orange}
+      value={`${streak} Days`}
+      label="Current Streak"
+    />
+    <StatRow
+      icon="flag"
+      lib="mci"
+      value={`${TOTAL_DAYS - today} Days`}
+      label="Remaining"
+    />
+  </View>
+</View>
+
             {/* Pillars */}
             
       <Card>
@@ -1731,6 +1737,16 @@ const s = StyleSheet.create({
   pillText: { color: '#fff', fontSize: 15, fontWeight: '700', marginLeft: 10 },
 
   ringRow: { flexDirection: 'row', alignItems: 'center', marginVertical: 18 },
+  ringRowMobile: {
+  flexDirection: 'column',
+  alignItems: 'center',
+  marginVertical: 20,
+},
+mobileStats: {
+  width: '100%',
+  marginLeft: 0,
+  marginTop: 24,
+},
   ringDay: { color: '#fff', fontSize: 16, fontWeight: '600' },
   ringNum: { color: '#fff', fontSize: 40, fontWeight: '900' },
   ringOf: { fontSize: 20, fontWeight: '600', color: '#DDE6EA' },
